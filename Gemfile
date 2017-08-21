@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'figaro', '1.0'
+
+gem 'bootstrap', '~> 4.0.0.beta'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
