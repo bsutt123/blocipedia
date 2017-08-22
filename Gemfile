@@ -25,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro', '1.0'
 
 gem 'bootstrap', '~> 4.0.0.beta'
+
+gem 'pry-rails', :group => 'production'
+
+gem 'rspec-rails', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -41,6 +45,8 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  gem 'rspec-rails', '~> 3.0'
 end
 
 group :development do
