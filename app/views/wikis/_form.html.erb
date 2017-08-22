@@ -1,14 +1,18 @@
-<%= form_for @wiki do |f| %>
+<%= form_for wiki do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
+    <%= f.text_area :body, class: 'form-control wiki-body' %>
   </div>
-  <div class="form-group">
-    <%= f.label :private %>
-    <%= f.check_box :private, class: 'form-control' %>
+  <div>
+    <% f.label :private %> Is this a private wiki?
+    <%= f.check_box :private %>
   </div>
+  <div class="form-group text-right">
+    <%= f.submit "Save Wiki", class:"btn btn-success" %>
+  </div>
+
 <% end %>

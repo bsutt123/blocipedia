@@ -26,7 +26,7 @@ gem 'figaro', '1.0'
 
 gem 'bootstrap', '~> 4.0.0.beta'
 
-gem 'pry-rails', :group => 'production'
+gem 'pry-rails', :group => :development
 
 gem 'rspec-rails', '~> 3.0'
 # Use ActiveModel has_secure_password
