@@ -31,6 +31,8 @@ gem 'pry-rails', :group => :development
 gem 'pundit'
 
 gem 'faker'
+
+gem 'forgery'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

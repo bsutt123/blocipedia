@@ -14,13 +14,24 @@
     password_confirmation: 'password'
   )
 end
+User.create!(
+  name: "Brady Sutton",
+  email: "bsutt123@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  role: "admin"
+)
 users = User.all
 
-50.times do
+10.times do
+  article = ""
+  10.times do
+    article += Faker::Lorem.paragraph(8)+"\n \n \n"
+  end
   Wiki.create!(
     user: users.sample,
     title: Faker::HitchhikersGuideToTheGalaxy.character,
-    body: Faker::HitchhikersGuideToTheGalaxy.quote,
+    body: article,
     private: false,
   )
 end
