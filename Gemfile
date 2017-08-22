@@ -28,7 +28,7 @@ gem 'bootstrap', '~> 4.0.0.beta'
 
 gem 'pry-rails', :group => :development
 
-gem 'rspec-rails', '~> 3.0'
+gem 'pundit'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
