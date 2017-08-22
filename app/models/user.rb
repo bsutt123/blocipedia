@@ -10,9 +10,14 @@ class User < ActiveRecord::Base
 
   enum role: [:member, :premium, :admin]
 
+
+  def set_role(role_name)
+    self.role = role_name
+  end
   private
 
   def default_member
-    self.role = "premium"
+    self.role = "member"
   end
+
 end

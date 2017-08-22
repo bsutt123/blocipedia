@@ -48,5 +48,15 @@
 
     <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete %></p>
 
+    <% if current_user.member? %>
+    <div class="actions">
+      <h3> Upgrade! </h3>
+      <p> You are currently a regular Blocipedia member, and if you want to access our premium features like private wikis, you need to upgrade.</p>
+      <%= link_to "Upgrade", new_charge_path, class: 'btn btn-success' %>
+    </div>
+    <% end %>
+
     <%= link_to "Back", :back %>
+
+
   </div>
