@@ -14,4 +14,29 @@
  *= require_self
  */
 
-@import "bootstrap"
+@import "bootstrap";
+
+$red-base-500:  #F44336;
+$red-base-300: #E57373;
+$grey-base-200: #EEEEEE;
+
+.bg-faded {
+  background-color: $red-base-300;
+}
+
+.white-text {
+  color: white;
+}
+
+.black-text {
+  color: black;
+}
+.sign-in-box {
+  border: 1px solid black;
+  margin-top: 1rem;
+  background-color: white;
+}
+
+body {
+  background-color: $grey-base-200;
+}
