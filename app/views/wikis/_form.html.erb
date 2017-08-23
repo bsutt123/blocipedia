@@ -7,10 +7,13 @@
     <%= f.label :body %>
     <%= f.text_area :body, class: 'form-control wiki-body' %>
   </div>
-  <div>
-    <% f.label :private %> Is this a private wiki?
-    <%= f.check_box :private %>
-  </div>
+  <% if current_user.admin? || current_user.premium? %>
+      <div class="form-group">
+      <%= f.label :private, class: 'checkbox' do %>
+        <%= f.check_box :private %> Private wiki
+      <% end %>
+    </div>
+  <% end %>
   <div class="form-group text-right">
     <%= f.submit "Save Wiki", class:"btn btn-success" %>
   </div>

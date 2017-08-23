@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
   def index
-    @wikis = Wiki.all
+    @wikis = Wiki.all.where(private: false)
   end
 
   def new
@@ -55,6 +55,11 @@ class WikisController < ApplicationController
       flash[:alert] = "There was a problem saving your Wiki, please try again."
       redirect_to root_path
     end
+  end
+
+  def private
+    @wikis = current_user.wikis.where(private: true)
+    authorize @wikis
   end
 
   private
