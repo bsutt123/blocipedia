@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
 
   has_many :wikis
 
-  enum role: [:member, :premium, :admin]
+  enum role: [:member, :premium, :administrator]
+
 
 
   private

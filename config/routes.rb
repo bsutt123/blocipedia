@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   devise_for :users
 
 
+  put 'roles/update'
+
   resources :charges, only: [:new, :create]
   resources :wikis
   # The priority is based upon order of creation: first created -> highest priority.
