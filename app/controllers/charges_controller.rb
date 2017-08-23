@@ -12,11 +12,12 @@ class ChargesController < ApplicationController
       currency: 'usd'
     )
 
-    flash[:notice] = "Thank you for your payment. It was successfully processed"
-    redirect_to root_path
-    current_user.update_attributes(role: "premium")
-  rescue Stripe::CardError => e
-    flash[:alert] = e.message
+    if charge.paid?
+      flash[:notice] = "Thank you for your payment. It was successfully processed"
+      current_user.update(role: "premium")
+    else
+      flash[:alert] = "There was a problem with your payment"
+    end
     redirect_to root_path
   end
 

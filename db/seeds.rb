@@ -26,7 +26,7 @@ users = User.all
 10.times do
   article = ""
   10.times do
-    article += Faker::Lorem.paragraph(8)+"\n \n \n"
+    article += Faker::Lorem.paragraph(8)+"\\n \\n \\n"
   end
   Wiki.create!(
     user: users.sample,

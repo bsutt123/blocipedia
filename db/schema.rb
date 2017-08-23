@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170822212342) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "name"
-    t.integer  "role"
+    t.integer  "role",                   default: 0,  null: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
