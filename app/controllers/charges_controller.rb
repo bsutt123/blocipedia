@@ -14,7 +14,7 @@ class ChargesController < ApplicationController
 
     flash[:notice] = "Thank you for your payment. It was successfully processed"
     redirect_to root_path
-    current_user.set_role("premium")
+    current_user.update_attributes(role: "premium")
   rescue Stripe::CardError => e
     flash[:alert] = e.message
     redirect_to root_path
