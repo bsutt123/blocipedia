@@ -1,16 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-12" class="text-center">
-        <h2 class="text-center"> Welcome to the Wiki List! </h2>
-        <%= link_to "Create Wiki", new_wiki_path, class: 'btn btn-success text-center'%>
+      <h2 class="d-inline"> Welcome to the Wiki List! </h2>
+      <%= link_to "Create Wiki", new_wiki_path, class: 'btn btn-success text-center'%>
     </div>
   </div>
   <div class="row">
-    <div class="col-6 text-left">
+    <div class="col-10 text-left">
       <h4> Wiki Title </h4>
-    </div>
-    <div class="col-6 text-right">
-      <h4> Wiki Creator </h4>
     </div>
   </div>
   <% @wikis.each do |wiki| %>

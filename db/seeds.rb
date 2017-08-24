@@ -13,7 +13,15 @@
     password: 'password',
     password_confirmation: 'password'
   )
+  User.create!(
+    name: Faker::Name.unique.name,
+    email: Faker::Internet.unique.email,
+    password: 'password',
+    password_confirmation: 'password',
+    role: 'premium'
+  )
 end
+
 User.create!(
   name: "Brady Sutton",
   email: "bsutt123@gmail.com",
@@ -21,17 +29,45 @@ User.create!(
   password_confirmation: "password",
   role: "admin"
 )
+
+User.create!(
+  name: "Standard",
+  email: "standard@example.com",
+  password: "password",
+  password_confirmation: "password",
+)
+
+User.create!(
+  name: "premium",
+  email: "premium@example.com",
+  password: "password",
+  password_confirmation: "password",
+  role: "premium"
+)
+
+
 users = User.all
+
 
 10.times do
   article = ""
   10.times do
     article += Faker::Lorem.paragraph(8)+"\\n \\n \\n"
   end
-  Wiki.create!(
-    user: users.sample,
+  wiki = Wiki.create!(
     title: Faker::HitchhikersGuideToTheGalaxy.character,
     body: article,
     private: false,
   )
 end
+
+(1..9).each do |index|
+  wiki = Wiki.create!(
+    title: "private #{index}",
+    body: "private #{index}",
+    private: true,
+    owner: "Brady Sutton"
+  )
+  wiki.user_ids = User.find_by_name("Brady Sutton").id
+end
+wikis = Wiki.all

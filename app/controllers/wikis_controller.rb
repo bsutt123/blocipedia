@@ -9,7 +9,6 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true)
   end
 
   def delete
@@ -47,7 +46,13 @@ class WikisController < ApplicationController
 
   def create
     @wiki = Wiki.new(wiki_params)
-    @wiki.user = current_user
+    @wiki.user_ids = current_user.id
+    @wiki.owner = current_user.name
+    if current_user.wiki_ids == nil
+      current_user.wiki_ids = @wiki.id
+    else
+      current_user.wiki_ids.push(@wiki.id)
+    end
 
     if @wiki.save
       flash[:notice] = "You successfully saved the new Wiki!"
@@ -59,9 +64,10 @@ class WikisController < ApplicationController
   end
 
   def private
-    @wikis = current_user.wikis.where(private: true)
+    @wikis = current_user.wikis
     authorize @wikis
   end
+
 
   private
 
