@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-12" class="text-center">
+    <div class="col-md-10">
         <h2 class="text-center"> Welcome to the Wiki List! </h2>
+      </div>
+      <div class="col-md-2 pull-right">
         <%= link_to "Create Wiki", new_wiki_path, class: 'btn btn-success text-center'%>
     </div>
   </div>
@@ -12,5 +14,6 @@
   </div>
   <% @wikis.each do |wiki| %>
     <%= render partial: 'wiki_link', locals: {wiki: wiki} %>
+
   <% end %>
 </div>
