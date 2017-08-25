@@ -4,6 +4,7 @@ class CreateCollaborators < ActiveRecord::Migration
 
       t.belongs_to :user, index: true
       t.belongs_to :wiki, index: true
+      t.boolean :owner, default: false
       t.timestamps null: false
     end
   end

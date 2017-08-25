@@ -46,13 +46,8 @@ class WikisController < ApplicationController
 
   def create
     @wiki = Wiki.new(wiki_params)
-    @wiki.user_ids = current_user.id
-    @wiki.owner = current_user.name
-    if current_user.wiki_ids == nil
-      current_user.wiki_ids = @wiki.id
-    else
-      current_user.wiki_ids.push(@wiki.id)
-    end
+    @wiki.user = current_user
+    Collaborator.create(user: current_user, wiki: @wiki)
 
     if @wiki.save
       flash[:notice] = "You successfully saved the new Wiki!"

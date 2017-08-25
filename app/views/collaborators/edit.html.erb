@@ -14,7 +14,7 @@
       <div class="col-12">
         <h2> Remove Collaborators </h2>
       </div>
-      <% @wiki.users.each do |user| %>
+      <% @wiki.user_collaborators.each do |user| %>
         <div class="col-12">
           <%= link_to user.name, collaborators_destroy_path(user_id: user.id, wiki_id:@wiki_id), method: :delete, class: 'btn'%>
         </div>

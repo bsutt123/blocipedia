@@ -15,12 +15,12 @@
     <div class="col-4 marg-top">
     <% if @wiki.private %>
       <div class="col-12 text-center">
-        <h3> Owner: </h3> <h4> <%= @wiki.owner %> </h4>
+        <h3> Owner: </h3> <h4> <%= @wiki.user.name %> </h4>
       </div>
       <div class="col-12 text-center">
         <h3 class="marg-top"> Collaborators </h3>
       </div>
-      <% @wiki.users.each do |user| %>
+      <% @wiki.user_collaborators.each do |user| %>
       <div class="col-12 text-center">
         <h5> <%= user.name %> </h5>
       </div>
@@ -32,7 +32,7 @@
       <div class="col-12 text-center marg-bot">
         <%= link_to "Edit Wiki", edit_wiki_path(@wiki), class: 'btn btn-success' %>
       </div>
-      <% if @wiki.owner && @wiki.owner == current_user %>
+      <% if @wiki.user == current_user %>
         <div class="col-12 text-center">
           <%= link_to "Delete Wiki", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure you want to delete this wiki?"} %>
         </div>

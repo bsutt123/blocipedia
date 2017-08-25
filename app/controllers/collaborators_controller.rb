@@ -4,19 +4,19 @@ class CollaboratorsController < ApplicationController
     @wiki_id = params[:wiki_id]
     @users = User.all.where(role: 1)
     @wiki = Wiki.find(@wiki_id)
-    @collaborators = @wiki.users
+    @collaborators = @wiki.user_collaborators
   end
 
   def create
     @wiki = Wiki.find(params[:wiki_id])
     @user = User.find(params[:user_id])
-    Collaborator.create(user: @user, wiki: @wiki)
+    Collaborator.create!(user: @user, wiki: @wiki)
     flash[:notice] = "You successfully added a collaborator"
     redirect_to @wiki
   end
 
   def destroy
-
+    @wiki = Wiki.find(params[:wiki_id])
     @collaborator  = Collaborator.find_by_user_id(params[:user_id])
     if @collaborator.destroy
       flash[:notice] =  "You successfully removed a collaborator"

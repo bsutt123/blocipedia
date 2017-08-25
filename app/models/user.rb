@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :collaborators
-  has_many :wikis, through: :collaborators
+  has_many :col_wikis, through: :collaborators, source: :wiki
+  has_many :wikis
 
   enum role: [:standard, :premium, :admin]
 

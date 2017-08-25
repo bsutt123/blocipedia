@@ -47,7 +47,7 @@ User.create!(
 
 
 users = User.all
-
+brady = User.find_by_name("Brady Sutton")
 
 10.times do
   article = ""
@@ -58,6 +58,7 @@ users = User.all
     title: Faker::HitchhikersGuideToTheGalaxy.character,
     body: article,
     private: false,
+    user: users.sample
   )
 end
 
@@ -66,8 +67,7 @@ end
     title: "private #{index}",
     body: "private #{index}",
     private: true,
-    owner: "Brady Sutton"
   )
-  wiki.user_ids = User.find_by_name("Brady Sutton").id
+  Collaborator.create!(user: brady, wiki: wiki)
 end
 wikis = Wiki.all
