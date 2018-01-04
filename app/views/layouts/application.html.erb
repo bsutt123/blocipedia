@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-light bg-faded">
       <div class="col-8">
-      <%= link_to "Blocipedia", root_path, class: "navbar-brand black-text"%>
+      <%= link_to "Home", root_path, class: "navbar-brand black-text"%>
           <%= link_to "Wiki List", wikis_path, class: 'nav-item btn black-text' %>
           <% if user_signed_in? %>
             <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-item btn black-text' %>

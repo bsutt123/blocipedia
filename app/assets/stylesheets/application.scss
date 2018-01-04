@@ -17,12 +17,12 @@
 @import "bootstrap";
 @import url("https://fonts.googleapis.com/css?family=Alegreya:400,700|Lato:300,400,700");
 
-$red-base-500:  #b57e00;
-$red-base-300: #ebad3f;
+$primary-color:  #b57e00;
+$primary-color-light: #ebad3f;
 $grey-base-200: #EEEEEE;
 
 .bg-faded {
-  background-color: $red-base-300;
+  background-color: $primary-color;
 }
 .bg-white {
   background-color: white;
