@@ -15,9 +15,10 @@
  */
 
 @import "bootstrap";
+@import url("https://fonts.googleapis.com/css?family=Alegreya:400,700|Lato:300,400,700");
 
-$red-base-500:  #F44336;
-$red-base-300: #E57373;
+$red-base-500:  #b57e00;
+$red-base-300: #ebad3f;
 $grey-base-200: #EEEEEE;
 
 .bg-faded {
@@ -25,6 +26,16 @@ $grey-base-200: #EEEEEE;
 }
 .bg-white {
   background-color: white;
+}
+.bg-bread {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-image: url("holding-bread.jpg");
+  background-size:cover;
+  filter: brightness(60%);
+  z-index: 0;
+
 }
 .white-text {
   color: white;
@@ -43,8 +54,12 @@ body {
   background-color: $grey-base-200;
 }
 
-.marg-bot {
+.marg-bot-sm {
   margin-bottom: 1rem;
+}
+
+.marg-bot-md {
+  margin-bottom: 3rem;
 }
 
 .marg-top {

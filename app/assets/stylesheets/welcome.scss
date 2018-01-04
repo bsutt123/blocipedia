@@ -1,3 +1,33 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.hero {
+    position:relative;
+    height: 100vh;
+    width: 100vw;
+    
+    &__img {
+       filter: brightness(50%) blur(1px);
+       width: 100vw;
+       height: 100vh;
+       background-size: cover;
+       position: absolute;
+       top: 0;
+       left: 0; 
+    }
+
+    &__title {
+        font-family: "Alegreya", serif;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        
+        &__content {
+            
+        }
+    }
+}

@@ -8,10 +8,7 @@ Rails.application.routes.draw do
   get 'wikis/private'
   put 'roles/update'
 
-  resources :collaborators, only: [:edit,]
+  resources :collaborators, only: [:edit, :create, :destroy]
   resources :charges, only: [:new, :create]
   resources :wikis
-
-  post 'collaborators/create'
-  delete 'collaborators/destroy'
 end
