@@ -1,28 +1,37 @@
-== README
+# Crust
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Crust is a Ruby on Rails applicatoin that allows users to create wikis for anything, but with a theme of bread related knowledge. Premium users can upgrade to get access to collaborator private wikis that retrict access to the wiki to only users approved by the owner.
 
-Things you may want to cover:
+## Technology
 
-* Ruby version
+Crust implements a number of different gems to ease the development cycle. In addition to the common Rails gems associated with most applictions, this app in particular uses the following:
 
-* System dependencies
+* Bootstrap is used to style the pages
+* Stripe controls the payment system
+* Redcarpet is used to render the markdown for the pages
 
-* Configuration
+## Features
 
-* Database creation
+* Users can create a standard account for free in order to read, create and edit public wikis using Markdown Syntax
+* Users can choose to upgrade to a premium account
+* Premium Users can create private wikis where access is restricted to other specified collaborators
 
-* Database initialization
+## Local Installation
 
-* How to run the test suite
+If you want to install Crust locally, you need to make sure that you have Ruby installed on your machine, and then fork and clone the repository. After you have clone the repository locally, use bundler to install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+#if needed
+gem install bundle
 
-* Deployment instructions
+bundle install
+```
+after that you should just need to set up the databases
+```bash
+rake db:setup
+```
+start up the local development server and visit the default port at `http://localhost:3000`
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```bash
+rails s
+```
